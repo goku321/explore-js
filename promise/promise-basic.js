@@ -6,10 +6,14 @@ console.log(typeof(fifteen))
 fifteen.then(value => console.log(`Got ${value}`));
 // -> Got 15
 
+function asynFunc(value) {
+    setTimeout(() => { console.log("Running async...") }, 1000);
+}
+
 function returnPromise() {
     return new Promise(resolve => {
-        setTimeout(result => { resolve(result) }, 50);
-    })
+        setTimeout(() => { resolve(5); }, 1000);
+    });
 }
 
 obj = returnPromise();
