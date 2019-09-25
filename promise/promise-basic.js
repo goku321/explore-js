@@ -8,8 +8,9 @@ fifteen.then(value => console.log(`Got ${value}`));
 
 function returnPromise() {
     return new Promise(resolve => {
-        setTimeout(() => { console.log('aFter timeout') }, 50);
+        setTimeout(result => { resolve(result) }, 50);
     })
 }
 
 obj = returnPromise();
+obj.then(value => { console.log(value) });
